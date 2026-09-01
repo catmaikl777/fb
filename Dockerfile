@@ -10,4 +10,4 @@ ENV CONSOLE_USERNAME=admin
 ENV CONSOLE_PASSWORD=Kotlovemilk_8
 
 # Запуск
-CMD /nakama/nakama migrate up --database.address "$DATABASE_URL" && /nakama/nakama --database.address "$DATABASE_URL" --console.username "$CONSOLE_USERNAME" --console.password "$CONSOLE_PASSWORD"
+CMD /nakama/nakama migrate up --database.address "postgresql://$DATABASE_USER:$DATABASE_PASSWORD@$DATABASE_HOST:$DATABASE_PORT/$DATABASE_NAME" && /nakama/nakama --database.address "postgresql://$DATABASE_USER:$DATABASE_PASSWORD@$DATABASE_HOST:$DATABASE_PORT/$DATABASE_NAME" --console.username "$CONSOLE_USERNAME" --console.password "$CONSOLE_PASSWORD"
