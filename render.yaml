@@ -2,11 +2,22 @@ services:
   - type: web
     name: fb-2
     runtime: image
-    dockerfilePath: ./Dockerfile   # ← обязательно!
+    image: heroiclabs/nakama:latest   # используем официальный образ
     envVars:
-      - key: NAKAMA_DATABASE_DSN
+      - key: NAKAMA_DATABASE_ADDRESS
         value: postgresql://neondb_owner:npg_rvewjGR5D0ZC@ep-solitary-glade-aen2w93i-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require
-      - key: CONSOLE_USERNAME
+      - key: NAKAMA_CONSOLE_USERNAME
         value: admin
-      - key: CONSOLE_PASSWORD
+      - key: NAKAMA_CONSOLE_PASSWORD
         value: Kotlovemilk_8
+      # Все остальные секретные ключи (обязательно для продакшена)
+      - key: NAKAMA_CONSOLE_SIGNING_KEY
+        value: jK8NzCm3Yd0Ou9c64xPvETQVXkhf7WSH
+      - key: NAKAMA_SOCKET_SERVER_KEY
+        value: 2wPZVXNinWlSvCHEzBtdr8sOGIxDUFQ3
+      - key: NAKAMA_SESSION_ENCRYPTION_KEY
+        value: yreI7wSv3ANVL6DfnJKBCXQx4FbdlhuG
+      - key: NAKAMA_SESSION_REFRESH_ENCRYPTION_KEY
+        value: CVF9EJ0Sr5PikI6ps1adj4hcwtRTnW83
+      - key: NAKAMA_RUNTIME_HTTP_KEY
+        value: MSKkfjVHxzn0AXg32mLC9T7NWrbU4BJD
