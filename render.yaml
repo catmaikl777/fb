@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nakama-server
+    name: fb-2
     env: docker
     dockerfilePath: ./Dockerfile
     envVars:
