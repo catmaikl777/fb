@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: fb-3
+    name: nakama
     image: heroiclabs/nakama:latest   # используем официальный образ
     envVars:
       - key: NAKAMA_DATABASE_ADDRESS
