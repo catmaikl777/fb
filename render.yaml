@@ -4,7 +4,7 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     envVars:
-      - key: DATABASE_URL
+      - key: NAKAMA_DATABASE_DSN
         value: postgresql://neondb_owner:npg_rvewjGR5D0ZC@ep-solitary-glade-aen2w93i-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require
       - key: CONSOLE_USERNAME
         value: admin
